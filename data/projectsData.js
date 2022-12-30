@@ -16,5 +16,4 @@ const projectsData = [
     href: '/blog/the-time-machine',
   },
 ]
-
 export default projectsData
