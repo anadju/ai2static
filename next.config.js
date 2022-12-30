@@ -66,6 +66,11 @@ module.exports = withBundleAnalyzer({
       },
     ]
   },
+  webpack: (config, { dev, isServer }) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    })
 
 webpack: (config, { dev, isServer }) => {
     (config.resolve.alias = {
