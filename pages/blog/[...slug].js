@@ -42,7 +42,10 @@ export async function getStaticProps({ params }) {
 
 export default function Blog({ post, authorDetails, prev, next }) {
   const { mdxSource, toc, frontMatter } = post
-
+const router = useRouter()
+    if (!router.isFallback && !postData && !posts) {
+        return <ErrorPage statusCode={404} />
+    }
   return (
     <>
       {frontMatter.draft !== true ? (
